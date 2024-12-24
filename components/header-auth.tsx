@@ -12,6 +12,17 @@ export default async function AuthButton() {
     data: { user },
   } = await supabase.auth.getUser();
 
+  const { data: userData, error: userError } = await supabase
+    .from("users")
+    .select("first_name")
+    .eq("email", user?.email)
+    .single();
+
+  if (userError) {
+    console.error("Error fetching user:", userError.message);
+    return "Error: Unable to fetch user details.";
+  }
+
   if (!hasEnvVars) {
     return (
       <>
@@ -50,7 +61,7 @@ export default async function AuthButton() {
   }
   return user ? (
     <div className="flex items-center gap-4">
-      Hey, {user.email}!
+      Hey, {userData.first_name}!
       <form action={signOutAction}>
         <Button type="submit" variant={"outline"}>
           Sign out
