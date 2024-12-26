@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* DARK MODE */
+/* PRIMARY #ffa500
+SECONDARY #808080
+FOREGROUND #292929
+BACKGROUND #1b1b1b */
+
 @layer base {
   :root {
     --background: 0 0% 100%;

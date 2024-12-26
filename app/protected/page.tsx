@@ -16,26 +16,45 @@ export default async function ProtectedPage() {
   }
 
   return (
-    <div className="flex-1 w-full flex flex-col gap-12">
+    <div className="flex mx-auto w-full md:w-5/6 lg:w-4/6 flex flex-col overflow-auto">
       <div className="w-full">
-        <div className="bg-accent text-sm p-3 mb-3 px-5 rounded-md text-foreground flex gap-3 items-center">
-          <Users />
+        <div className="flex justify-between items-center my-2">
+          <h1 className="text-2xl py-2">My Files</h1>
+          <button
+            type="button"
+            className="h-10 px-4 border hover:cursor-pointer"
+          >
+            Upload
+          </button>
         </div>
-        <div className="bg-accent text-sm p-3 px-5 rounded-md text-foreground flex gap-3 items-center">
-          <InfoIcon size="16" strokeWidth={2} />
-          This is a protected page that you can only see as an authenticated
-          user
-        </div>
-      </div>
-      <div className="flex flex-col gap-2 items-start">
-        <h2 className="font-bold text-2xl mb-4">Your user details</h2>
-        <pre className="text-xs font-mono p-3 rounded border max-h-32 overflow-auto">
-          {JSON.stringify(user, null, 2)}
-        </pre>
-      </div>
-      <div>
-        <h2 className="font-bold text-2xl mb-4">Next steps</h2>
-        <FetchDataSteps />
+        <table className="w-full text-xs md:text-sm border">
+          <thead className="border text-left bg-background">
+            <tr>
+              <th className="py-2 px-4">Name</th>
+              <th className="py-2 px-2">Type</th>
+              <th className="py-2 px-2">Size</th>
+              <th className="py-2 px-2">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="hover:bg-background hover:cursor-pointer border">
+              <td className="max-w-80 py-2 px-4 text-nowrap overflow-hidden">
+                Example.jpg
+              </td>
+              <td className="w-6 py-2 px-2 text-nowrap">JPEG</td>
+              <td className="w-6 py-2 px-2 text-nowrap">32 Kb</td>
+              <td className="w-14 py-2 pl-2 pr-4 text-nowrap">24/12/2024</td>
+            </tr>
+            <tr className="hover:bg-background hover:cursor-pointer border">
+              <td className="max-w-80 py-2 px-4 text-nowrap overflow-hidden">
+                Example.jpg
+              </td>
+              <td className="w-6 py-2 px-2 text-nowrap">JPEG</td>
+              <td className="w-6 py-2 px-2 text-nowrap">32 Kb</td>
+              <td className="w-14 py-2 pl-2 pr-4 text-nowrap">24/12/2024</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );
