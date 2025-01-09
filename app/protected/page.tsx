@@ -22,7 +22,7 @@ export default async function ProtectedPage() {
           <h1 className="text-2xl py-2">My Files</h1>
           <button
             type="button"
-            className="h-10 px-4 border hover:cursor-pointer"
+            className="h-10 px-4 border hover:cursor-pointer bg-primary text-background font-bold rounded"
           >
             Upload
           </button>
