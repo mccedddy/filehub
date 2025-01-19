@@ -3,6 +3,7 @@ import { createClient } from "@/utils/supabase/server";
 import { InfoIcon } from "lucide-react";
 import { redirect } from "next/navigation";
 import Users from "../users/page";
+import TableItem from "../../components/table-item";
 
 export default async function ProtectedPage() {
   const supabase = await createClient();
@@ -37,22 +38,55 @@ export default async function ProtectedPage() {
             </tr>
           </thead>
           <tbody>
-            <tr className="hover:bg-background hover:cursor-pointer border">
-              <td className="max-w-80 py-2 px-4 text-nowrap overflow-hidden">
-                Example.jpg
-              </td>
-              <td className="w-6 py-2 px-2 text-nowrap">JPEG</td>
-              <td className="w-6 py-2 px-2 text-nowrap">32 Kb</td>
-              <td className="w-14 py-2 pl-2 pr-4 text-nowrap">24/12/2024</td>
-            </tr>
-            <tr className="hover:bg-background hover:cursor-pointer border">
-              <td className="max-w-80 py-2 px-4 text-nowrap overflow-hidden">
-                Example.jpg
-              </td>
-              <td className="w-6 py-2 px-2 text-nowrap">JPEG</td>
-              <td className="w-6 py-2 px-2 text-nowrap">32 Kb</td>
-              <td className="w-14 py-2 pl-2 pr-4 text-nowrap">24/12/2024</td>
-            </tr>
+            <TableItem
+              id={1}
+              name="Example.jpg"
+              type="JPEG"
+              size="32 Kb"
+              date="24/12/2024"
+            />
+            <TableItem
+              id={2}
+              name="Example.jpg"
+              type="JPEG"
+              size="32 Kb"
+              date="24/12/2024"
+            />
+            <TableItem
+              id={3}
+              name="Example.jpg"
+              type="JPEG"
+              size="32 Kb"
+              date="24/12/2024"
+            />
+            <TableItem
+              id={4}
+              name="Example.jpg"
+              type="JPEG"
+              size="32 Kb"
+              date="24/12/2024"
+            />
+            <TableItem
+              id={5}
+              name="Example.jpg"
+              type="JPEG"
+              size="32 Kb"
+              date="24/12/2024"
+            />
+            <TableItem
+              id={6}
+              name="Example.jpg"
+              type="JPEG"
+              size="32 Kb"
+              date="24/12/2024"
+            />
+            <TableItem
+              id={7}
+              name="Example.jpg"
+              type="JPEG"
+              size="32 Kb"
+              date="24/12/2024"
+            />
           </tbody>
         </table>
       </div>
